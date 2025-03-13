@@ -6,7 +6,7 @@ import SettingPage from "./Pages/SettingPage.jsx";
 import ProfilePage from "./Pages/ProfilePage.jsx";
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { useAuthStore } from './Store/useAuthStore.js';
-import { useThemeStore } from "./store/useThemeStore.js";
+import { useThemeStore } from './Store/useThemeStore.js';
 import { useEffect } from 'react';
 import { Loader } from "lucide-react";
 import {Toaster} from "react-hot-toast";
