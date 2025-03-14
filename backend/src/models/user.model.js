@@ -11,18 +11,43 @@ const userSchema = new Schema({
         required : true,
         unique : true,
      },
+     
+     tempPassword: { 
+      type: String 
+   },
+
      password : {
         type : String,
-        required : [true, 'Password is required'],
+        required : function() { return this.isVerified; },
         minlength : 6,
      },
      profilePic : {
         type : String,
-        deafult : "",
-     }
+        default : "",
+     },
+     otp: { 
+      type: String
+    }, 
+
+     otpExpires: { 
+      type: Date 
+   }, 
+   
+   otpSentAt: {
+       type: Date, 
+       default: Date.now 
+      },
+
+   isVerified: { 
+      type: Boolean, 
+      default: false,
+    },
+     
 },{
     timestamps : true
  })
+
+
 
 export const User = mongoose.model("Users",userSchema); // model("User") or anything when we create a another model 
 

@@ -1,6 +1,7 @@
 import Navbar from "./Components/Navbar.jsx";
 import HomePage from "./Pages/HomePage.jsx";
 import SignUpPage from "./Pages/SignUpPage.jsx";
+import OtpVerificationPage from "./Pages/OtpVerificationPage.jsx"; 
 import LoginPage from "./Pages/LoginPage.jsx";
 import SettingPage from "./Pages/SettingPage.jsx";
 import ProfilePage from "./Pages/ProfilePage.jsx";
@@ -41,6 +42,7 @@ if(isCheckingAuth && !authUser) return (
         <Route path='/login' element={!authUser ? <LoginPage /> :<Navigate to="/" />} />
         <Route path='/settings' element={<SettingPage />} />
         <Route path='/profile' element={authUser ? <ProfilePage /> : <Navigate to="/login" />} />
+        <Route path='/verify-otp' element={<OtpVerificationPage />} /> 
        </Routes>
 
        <Toaster />
