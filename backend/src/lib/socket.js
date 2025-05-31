@@ -16,7 +16,7 @@ export function getReceiverSocketId(userId) {
 }
 
 // used to store online users
-const userSocketMap = {}; // {userId: socketId}
+const userSocketMap = {}; // {userId: socketId} hdudiic
 
 io.on("connection", (socket) => {
   console.log("A user connected", socket.id);
